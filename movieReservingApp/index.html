@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineBook | Movie Reservations</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#">🎬 CineBook</a>
+      <nav>
+        <a href="#movies">Movies</a>
+        <a href="#booking">Book Tickets</a>
+        <a href="#my-bookings">My Bookings</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR NEXT MOVIE NIGHT STARTS HERE</p>
+        <h1>Big screen.<br /><span>Big moments.</span></h1>
+        <p>
+          Discover a film, choose your seats, and book your next movie night.
+        </p>
+        <a class="primary-button" href="#movies">Explore Movies ↓</a>
+      </div>
+      <div class="hero-art">
+        <div class="ticket-art">
+          <span>ADMIT ONE</span>
+          <strong>MOVIE<br />NIGHT</strong>
+          <hr />
+          <small>YOUR SEAT AWAITS</small>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="section" id="movies">
+        <p class="eyebrow">PICK YOUR STORY</p>
+        <h2>Now Showing</h2>
+        <p class="section-description">
+          Select a movie to begin your reservation.
+        </p>
+
+        <div class="movie-grid">
+          <button
+            class="movie-card selected"
+            data-movie="stellar"
+            type="button"
+          >
+            <div class="poster poster-stellar">
+              <span>SCI-FI · ADVENTURE</span>
+              <strong>STELLAR<br />DRIFT</strong>
+            </div>
+            <h3>Stellar Drift</h3>
+            <p>★ 8.7 · 2h 08m</p>
+            <span class="select-label">Selected ✓</span>
+          </button>
+
+          <button class="movie-card" data-movie="midnight" type="button">
+            <div class="poster poster-midnight">
+              <span>THRILLER · CRIME</span>
+              <strong>MIDNIGHT<br />RUN</strong>
+            </div>
+            <h3>Midnight Run</h3>
+            <p>★ 8.2 · 1h 54m</p>
+            <span class="select-label">Select movie</span>
+          </button>
+
+          <button class="movie-card" data-movie="wild" type="button">
+            <div class="poster poster-wild">
+              <span>ADVENTURE · DRAMA</span>
+              <strong>WILD<br />HORIZON</strong>
+            </div>
+            <h3>Wild Horizon</h3>
+            <p>★ 7.9 · 2h 01m</p>
+            <span class="select-label">Select movie</span>
+          </button>
+
+          <button class="movie-card" data-movie="laugh" type="button">
+            <div class="poster poster-laugh">
+              <span>COMEDY · FEEL-GOOD</span>
+              <strong>LAUGH<br />TRACK</strong>
+            </div>
+            <h3>Laugh Track</h3>
+            <p>★ 7.6 · 1h 42m</p>
+            <span class="select-label">Select movie</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section booking-section" id="booking">
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h2>Reserve Your Seats</h2>
+
+        <div class="booking-layout">
+          <div class="booking-panel">
+            <h3>1. Choose a date</h3>
+            <div id="date-options" class="date-options"></div>
+
+            <h3 class="space-top">2. Choose a showtime</h3>
+            <div class="time-options">
+              <button type="button" data-time="12:30 PM">12:30 PM</button>
+              <button type="button" data-time="3:45 PM" class="active">
+                3:45 PM
+              </button>
+              <button type="button" data-time="7:15 PM">7:15 PM</button>
+              <button type="button" data-time="9:40 PM">9:40 PM</button>
+            </div>
+
+            <h3 class="space-top">3. Select your seats</h3>
+            <div class="seat-legend">
+              <span>🟦 Available</span>
+              <span>🟩 Selected</span>
+              <span>⬛ Taken</span>
+            </div>
+
+            <div class="screen">SCREEN</div>
+            <div id="seat-map" class="seat-map"></div>
+            <p class="hint">Select one or more available seats.</p>
+          </div>
+
+          <aside class="summary-panel">
+            <p class="eyebrow">YOUR RESERVATION</p>
+            <h3 id="summary-movie">Stellar Drift</h3>
+            <div class="summary-line">
+              <span>Date</span>
+              <strong id="summary-date">Choose a date</strong>
+            </div>
+            <div class="summary-line">
+              <span>Showtime</span>
+              <strong id="summary-time">3:45 PM</strong>
+            </div>
+            <div class="summary-line">
+              <span>Seats</span>
+              <strong id="summary-seats">None selected</strong>
+            </div>
+            <div class="summary-line">
+              <span>Tickets</span>
+              <strong id="summary-count">0</strong>
+            </div>
+            <div class="summary-total">
+              <span>Total</span>
+              <strong id="summary-total">LKR 0</strong>
+            </div>
+            <button
+              class="primary-button confirm-button"
+              id="confirm-booking"
+              type="button"
+            >
+              Confirm Reservation →
+            </button>
+            <p class="hint">Demo only. No real payment is taken.</p>
+            <p id="booking-message" role="status"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="my-bookings">
+        <p class="eyebrow">YOUR MOVIE PLANS</p>
+        <h2>My Bookings</h2>
+        <button type="button" id="clear-bookings" class="text-button">
+          Clear booking history
+        </button>
+        <div id="booking-list" class="booking-list">
+          <p class="empty-state">Your reservations will appear here.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#">🎬 CineBook</a>
+      <p>Movie nights made easy. © <span id="year"></span> CineBook Demo</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
